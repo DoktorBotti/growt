@@ -168,13 +168,13 @@ public:
 
     static value_type* allocate()
     {
-        //return static_cast<value_type*>(malloc(sizeof(value_type)));
-        return allocator.allocate(1);
+        return static_cast<value_type*>(malloc(sizeof(value_type)));
+//        return allocator.allocate(1);
     }
     static void        deallocate(value_type* ptr)
     {
-        //free(ptr);
-        allocator.deallocate(ptr, 1);
+        free(ptr);
+//        allocator.deallocate(ptr, 1);
     }
 
     static std::string name()
